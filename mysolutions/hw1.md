@@ -10,11 +10,11 @@ Multiple, independently developed and maintained clients exist because client di
 <span style="color:lightblue">**2.	What information is held for an Ethereum account?**</span>
 
 The account state, comprises the following four fields:
-•	nonce: A scalar value equal to the number of transactions sent from this address or,
+- nonce: A scalar value equal to the number of transactions sent from this address or,
  in the case of accounts with associated code, the number of contract-creations made by this account.
-•	balance: A scalar value equal to the number of Wei owned by this address.
-•	storageRoot: A 256-bit hash of the root node of a Merkle Patricia tree that encodes the storage contents of the account (a mapping between 256-bit integer values), encoded into the trie as a mapping from the Keccak 256-bit hash of the 256-bit integer keys to the RLP-encoded 256-bit integer values.
-•	codeHash: The hash of the EVM code of this account—this is the code that gets executed should this address receive a message call; it is immutable and thus, unlike all other fields, cannot be changed after construction.
+- balance: A scalar value equal to the number of Wei owned by this address.
+- storageRoot: A 256-bit hash of the root node of a Merkle Patricia tree that encodes the storage contents of the account (a mapping between 256-bit integer values), encoded into the trie as a mapping from the Keccak 256-bit hash of the 256-bit integer keys to the RLP-encoded 256-bit integer values.
+- codeHash: The hash of the EVM code of this account—this is the code that gets executed should this address receive a message call; it is immutable and thus, unlike all other fields, cannot be changed after construction.
 
 <span style="color:lightblue">**3.	Where is the full Ethereum state held?**</span>
 

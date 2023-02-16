@@ -36,9 +36,11 @@ contract RemoveItems {
      * @param index num value to delete, must be non-gegative integer and less than the array length
      */
     function removeNoOrder(uint256 index) public {
-      require(index >= 0 && index < TestArray.length, "Invalid removal index");
-      TestArray[index] = TestArray[TestArray.length - 1];
-      TestArray.pop();
-  }
-
+        require(
+            index >= 0 && index < TestArray.length,
+            "Invalid removal index"
+        );
+        TestArray[index] = TestArray[TestArray.length - 1];
+        TestArray.pop();
+    }
 }

@@ -9,10 +9,12 @@ contract ExploreMem {
         names.push("name");
     }
 
-    function addName(string memory name) public {
+    function addName(string memory name) public returns (string memory) {
         bytes memory nameBytes = bytes(name);
         require(nameBytes.length != 0, "Empty name");
         names.push(name);
+        string[] memory names2 = names;
+        return names2[0];
     }
 
     function viewName(uint256 index) public view returns (string memory) {
