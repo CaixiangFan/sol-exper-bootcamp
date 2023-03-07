@@ -27,8 +27,15 @@ Giving a non-zero value in deploying the contract triggers a revert because the 
     3) (optional) write this again in opcodes
 
     ```
-    let result := add(0x07, 0x08);
-    mstore(0x80, result);
+    function add() pure public returns (uint256) {
+      assembly{
+        let ptr := mload(0x40)
+        let free_mem := add(ptr, 0x20)
+        let result := add(0x07, 0x08)
+        mstore(free_mem, result)
+        return(free_mem, 0x20)
+      }
+    }
     ```
 
 5. Can you think of a situation where the opcode EXTCODECOPY is used ?
@@ -39,3 +46,5 @@ Proxy contract and contract upgradability.
 Exercises
 If you want to use gitpod, this is the format
 https://gitpod.io/#https://github.com/ExtropyIO/ExpertSolidityBootcamp
+
+[solutions](https://github.com/CaixiangFan/ExpertSolidityBootcamp)
